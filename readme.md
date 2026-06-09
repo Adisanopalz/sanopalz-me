@@ -16,14 +16,6 @@ Tautan Tersentralisasi: Menyimpan semua tautan penting (GitHub, LinkedIn, Instag
 
 Dukungan Dark Mode: Menyesuaikan dengan preferensi tema sistem perangkat pengunjung.
 
-📂 Struktur Dokumentasi
-
-Untuk detail lebih lanjut mengenai proyek ini, silakan baca dokumen berikut:
-
-🎨 Spesifikasi Desain (design.md): Berisi panduan warna, tipografi, dan struktur antarmuka pengguna (UI).
-
-💻 Dokumentasi Developer (developer.md): Berisi informasi tentang tech stack, cara instalasi, dan panduan deployment.
-
 📬 Kontak
 
 Jika ada pertanyaan atau ingin berkolaborasi, silakan hubungi saya melalui tautan yang ada di me.sanopalz.my.id.
