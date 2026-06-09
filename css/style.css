@@ -1,0 +1,288 @@
+/* =============================================
+   CSS Variables - Color Palette & Design System
+   ============================================= */
+
+:root {
+  /* Dark Mode (Default) */
+  --bg-primary: #121212;
+  --bg-secondary: #1E1E1E;
+  --text-primary: #F5F5F5;
+  --text-secondary: #A0A0A0;
+  --accent: #3B82F6;
+  --accent-hover: #2563EB;
+
+  /* Typography */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-size-lg: 28px;
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition: 0.3s ease-in-out;
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-primary: #F9FAFB;
+    --bg-secondary: #FFFFFF;
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --accent: #2563EB;
+    --accent-hover: #1D4ED8;
+  }
+}
+
+/* =============================================
+   Reset & Global Styles
+   ============================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition), color var(--transition);
+  line-height: 1.5;
+}
+
+/* =============================================
+   Layout & Container
+   ============================================= */
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* =============================================
+   Profile Header Section
+   ============================================= */
+
+.profile-header {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+  width: 100%;
+}
+
+.avatar {
+  margin: 0 auto var(--spacing-lg);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+  border: 3px solid var(--accent);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.profile-bio {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: var(--spacing-sm);
+}
+
+.profile-description {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* =============================================
+   Links Section
+   ============================================= */
+
+.links-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) 0;
+  flex: 1;
+}
+
+.link-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  transition: all var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.link-button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--accent);
+  opacity: 0.1;
+  transform: translate(-50%, -50%);
+  transition: width var(--transition), height var(--transition);
+  z-index: 0;
+}
+
+.link-button:hover:before {
+  width: 300px;
+  height: 300px;
+}
+
+.link-button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+}
+
+.link-button svg {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.link-button span {
+  position: relative;
+  z-index: 1;
+}
+
+/* =============================================
+   Footer
+   ============================================= */
+
+.footer {
+  text-align: center;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--bg-secondary);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  width: 100%;
+  margin-top: auto;
+}
+
+/* =============================================
+   Responsive Design
+   ============================================= */
+
+@media (max-width: 640px) {
+  .container {
+    padding: var(--spacing-md);
+  }
+
+  .profile-header {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-width: 2px;
+  }
+
+  .profile-name {
+    font-size: 24px;
+  }
+
+  .links-section {
+    gap: var(--spacing-sm);
+  }
+
+  .link-button {
+    padding: var(--spacing-md) var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-lg: 24px;
+    --font-size-base: 15px;
+    --spacing-lg: 20px;
+  }
+
+  .profile-description {
+    font-size: 13px;
+  }
+
+  .link-button {
+    gap: var(--spacing-sm);
+  }
+}
+
+/* =============================================
+   Accessibility & Focus States
+   ============================================= */
+
+.link-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* =============================================
+   Print Styles
+   ============================================= */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .link-button {
+    page-break-inside: avoid;
+  }
+}

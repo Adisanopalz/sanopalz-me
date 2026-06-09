@@ -1,0 +1,23 @@
+{
+  "name": "sanopalz-me",
+  "version": "1.0.0",
+  "description": "Personal landing page & digital business card untuk me.sanopalz.my.id",
+  "author": "Sanopalz",
+  "license": "MIT",
+  "scripts": {
+    "dev": "live-server",
+    "build": "echo 'No build needed - static site'",
+    "deploy": "echo 'Push to GitHub, then deploy via Vercel/Cloudflare Pages'"
+  },
+  "keywords": [
+    "landing-page",
+    "portfolio",
+    "personal-website",
+    "responsive",
+    "dark-mode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanopalz/me.sanopalz.my.id"
+  }
+}
